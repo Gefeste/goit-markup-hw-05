@@ -6,6 +6,8 @@
   --section-bg-cl: #2f303a;
   --nav-logo-cl: #000000;
   --bcg-btn-cl: #f5f4fa;
+  /* Анімація */
+  --animation: 950ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -65,6 +67,7 @@ img {
 .header-container {
   display: flex;
   align-items: center;
+  border-bottom: 1px solid #ececec;
 }
 
 .nav {
@@ -103,6 +106,9 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
   display: block;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover,
@@ -112,6 +118,24 @@ img {
 
 .current {
   color: var(--button-color);
+}
+
+.current-item {
+  position: relative;
+}
+
+.nav-link-current::after {
+  content: '';
+  display: inline-block;
+
+  position: absolute;
+  left: 0;
+  bottom: -1.5px;
+
+  width: 100%;
+  height: 4px;
+  background-color: var(--button-color);
+  border-radius: 2px;
 }
 
 .contact {
@@ -125,11 +149,9 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   fill: var(--text-color);
-}
-
-.mail {
-  gap: 10px;
-  fill: currentColor;
+  transition-property: color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact:hover,
@@ -198,9 +220,6 @@ h1 {
   margin-bottom: 30px;
 }
 
-.icon-list {
-}
-
 .about-us {
   display: inline-flex;
   gap: 30px;
@@ -247,6 +266,35 @@ h1 {
   gap: 30px;
 }
 
+.img-box {
+  position: relative;
+}
+
+.img-box .img-text {
+  position: absolute;
+  bottom: 27px;
+  left: 50%;
+  transform: translate(-50%);
+  color: var(--main-cl);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+.img-box::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 370px;
+  height: 70px;
+  bottom: 0;
+
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
 .team {
   background-color: #f5f4fa;
 }
@@ -276,6 +324,9 @@ h1 {
   height: 44px;
   border-radius: 50%;
   background-color: var(--main-cl);
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover,
@@ -285,6 +336,9 @@ h1 {
 
 .social-icon {
   fill: #afb1b8;
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover .social-icon,
@@ -335,6 +389,9 @@ h1 {
   height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link:hover,
@@ -349,6 +406,9 @@ h1 {
 
 .icon-client-logo {
   fill: #afb1b8;
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Підвал */
@@ -406,6 +466,9 @@ address {
 
 .footer-map-contact {
   color: var(--main-cl);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-map-contact:hover,
@@ -415,6 +478,9 @@ address {
 
 .footer-contact {
   color: rgba(255, 255, 255, 0.6);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-contact:hover,
@@ -439,6 +505,9 @@ address {
   height: 44px;
   border-radius: 50%;
   background-color: #ffffff1a;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link-footer:hover,
@@ -476,12 +545,14 @@ address {
   letter-spacing: 0.03em;
   border: 0;
   cursor: pointer;
-  border-radius: 4px;
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 22px;
   padding-right: 22px;
   border-radius: 4px;
+  transition-property: color background-color box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .radio-button:hover,
@@ -490,7 +561,6 @@ address {
   background-color: var(--button-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
 }
 
 .radio-buttons {
@@ -517,6 +587,9 @@ address {
 
 .box-item {
   display: block;
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .box-item:hover,
@@ -545,7 +618,7 @@ address {
   margin-bottom: 4px;
 }
 
-.portfolio-list li p {
+.box-name {
   text-align: left;
   color: var(--text-color);
 }
@@ -562,4 +635,90 @@ address {
 .portfolio-container {
   padding-bottom: 94px;
   padding-top: 94px;
+}
+
+.thumb {
+  position: relative;
+  overflow: hidden;
+
+}
+
+.thumb-text {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(101%);
+  padding: 63px 24px;
+  background-color: rgba(33, 150, 243, 0.9);
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover .thumb-text {
+  transform: translateY(0);
+}
+
+
+.thumb-text-p {
+  color: var(--main-cl);
+
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
+}
+
+/* modal window */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 500ms, visibility 300ms;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 581px;
+  background-color: var(--main-cl);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.modal-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--main-cl);
+  border-radius: 50%;
+  cursor: pointer;
+  animation-name: modal;
 }

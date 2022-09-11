@@ -28,8 +28,8 @@
             ><span class="nav-logo">Web</span><span class="nav-logocolor">Studio</span></a
           >
           <ul class="header-list">
-            <li>
-              <a class="current nav-link" href="">Студія</a>
+            <li class="current-item">
+              <a class="current nav-link nav-link-current" href="">Студія</a>
             </li>
             <li>
               <a href="./portfolio.html" class="nav-link">Портфоліо</a>
@@ -42,14 +42,14 @@
         <ul class="header-group">
           <li>
             <a class="contact" href="mailto:info@devstudio.com">
-              <svg class="mail" width="16" height="12">
+              <svg width="16" height="12">
                 <use href="./images/icons.svg#icon-mail"></use>
               </svg>
               info@devstudio.com
             </a>
           </li>
           <li>
-            <a href="tel:+380961111111" class="contact">
+            <a class="contact" href="tel:+380961111111">
               <svg width="10" height="16">
                 <use href="./images/icons.svg#icon-smartphone"></use>
               </svg>
@@ -64,7 +64,7 @@
       <section class="hero-section section">
         <div class="container overlay">
           <h1>Ефективні рішення для вашого бізнесу</h1>
-          <button type="button" class="button-order">Замовити послугу</button>
+          <button type="button" class="button-order" data-modal-open>Замовити послугу</button>
         </div>
       </section>
       <!-- Ососбливості -->
@@ -121,23 +121,33 @@
           <h2 class="title">Чим ми займаємося</h2>
           <ul class="our-work">
             <li>
-              <img
-                src="./images/img1.jpg"
-                alt="людина набирає текст на клавіатурі"
-                width="370"
-                height="294"
-              />
+              <div class="img-box">
+                <img
+                  class="img"
+                  src="./images/img1.jpg"
+                  alt="людина набирає текст на клавіатурі"
+                  width="370"
+                  height="294"
+                />
+                <p class="img-text">Десктопні додатки</p>
+              </div>
             </li>
             <li>
-              <img src="./images/img2.jpg" alt="тримає планшет в руці" width="370" height="294" />
+              <div class="img-box">
+                <img src="./images/img2.jpg" alt="тримає планшет в руці" width="370" height="294" />
+                <p class="img-text">Мобільні додатки</p>
+              </div>
             </li>
             <li>
-              <img
-                src="./images/img3.jpg"
-                alt="тримає телефон в руці перед ноутбуком"
-                width="370"
-                height="294"
-              />
+              <div class="img-box">
+                <img
+                  src="./images/img3.jpg"
+                  alt="тримає телефон в руці перед ноутбуком"
+                  width="370"
+                  height="294"
+                />
+                <p class="img-text">Дизайнерські рішення</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -484,5 +494,16 @@
         </div>
       </div>
     </footer>
+    <!-- modal window -->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-btn" type="button" data-modal-close>
+          <svg class="close-icon" width="11" height="11">
+            <use href="./images/icons.svg#close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./modal.js"></script>
   </body>
 </html>
