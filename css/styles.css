@@ -7,7 +7,7 @@
   --nav-logo-cl: #000000;
   --bcg-btn-cl: #f5f4fa;
   /* Анімація */
-  --animation: 950ms cubic-bezier(0.4, 0, 0.2, 1);
+  --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -106,9 +106,7 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
   display: block;
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--animation);
 }
 
 .nav-link:hover,
@@ -149,9 +147,7 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   fill: var(--text-color);
-  transition-property: color, fill;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--animation), fill var(--animation);
 }
 
 .contact:hover,
@@ -204,10 +200,18 @@ h1 {
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.06em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
   cursor: pointer;
   border: none;
   width: 216px;
   height: 50px;
+  transition: background-color var(--animation);
+}
+
+.button-order:hover,
+.button-order:focus {
+  background-color: #188ce8;
 }
 
 .about-us-bcg {
@@ -278,7 +282,7 @@ h1 {
   color: var(--main-cl);
   font-weight: 700;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   z-index: 10;
@@ -324,9 +328,7 @@ h1 {
   height: 44px;
   border-radius: 50%;
   background-color: var(--main-cl);
-  transition-property: background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--animation);
 }
 
 .social-link:hover,
@@ -336,9 +338,7 @@ h1 {
 
 .social-icon {
   fill: #afb1b8;
-  transition-property: fill;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--animation);
 }
 
 .social-link:hover .social-icon,
@@ -389,9 +389,7 @@ h1 {
   height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
-  transition-property: border-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color var(--animation);
 }
 
 .clients-link:hover,
@@ -406,9 +404,7 @@ h1 {
 
 .icon-client-logo {
   fill: #afb1b8;
-  transition-property: fill;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--animation);
 }
 
 /* Підвал */
@@ -466,9 +462,7 @@ address {
 
 .footer-map-contact {
   color: var(--main-cl);
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--animation);
 }
 
 .footer-map-contact:hover,
@@ -478,9 +472,7 @@ address {
 
 .footer-contact {
   color: rgba(255, 255, 255, 0.6);
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--animation);
 }
 
 .footer-contact:hover,
@@ -505,9 +497,7 @@ address {
   height: 44px;
   border-radius: 50%;
   background-color: #ffffff1a;
-  transition-property: background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--animation);
 }
 
 .social-link-footer:hover,
@@ -550,9 +540,7 @@ address {
   padding-left: 22px;
   padding-right: 22px;
   border-radius: 4px;
-  transition-property: color background-color box-shadow;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--animation), color var(--animation), box-shadow var(--animation);
 }
 
 .radio-button:hover,
@@ -587,9 +575,7 @@ address {
 
 .box-item {
   display: block;
-  transition-property: box-shadow;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--animation);
 }
 
 .box-item:hover,
@@ -640,7 +626,6 @@ address {
 .thumb {
   position: relative;
   overflow: hidden;
-
 }
 
 .thumb-text {
@@ -655,15 +640,12 @@ address {
   transform: translateY(101%);
   padding: 63px 24px;
   background-color: rgba(33, 150, 243, 0.9);
-  transition-property: transform;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--animation);
 }
 
 .portfolio-item:hover .thumb-text {
   transform: translateY(0);
 }
-
 
 .thumb-text-p {
   color: var(--main-cl);
@@ -720,5 +702,5 @@ address {
   background-color: var(--main-cl);
   border-radius: 50%;
   cursor: pointer;
-  animation-name: modal;
+
 }
